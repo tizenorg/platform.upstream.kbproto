@@ -1,43 +1,32 @@
-Name:     kbproto
-Summary:  X.Org X11 Protocol kbproto
-Version:  1.0.6
-Release:  1
-Group:    Development/System
-License:  MIT
-URL:      http://www.x.org
-Source0:  %{name}-%{version}.tar.gz
-Provides:   kbproto
+Name:           kbproto
+Version:        1.0.6
+Release:        1
+License:        MIT
+Summary:        X
+Url:            http://www.x.org
+Group:          Development/System
+Source0:        %{name}-%{version}.tar.bz2
 
-BuildRequires: pkgconfig
-BuildRequires: pkgconfig(xorg-macros)
-
-# some file to be intalled can be ignored when rpm generates packages
-%define _unpackaged_files_terminate_build 0
+BuildRequires:  pkgconfig
+BuildRequires:  pkgconfig(xorg-macros)
 
 %description
-Description: %{summary}
+%{summary}.
 
 %prep
 %setup -q
 
 %build
-
-./autogen.sh
-%reconfigure --disable-static \
+%configure --disable-static \
              --libdir=%{_datadir} \
              --without-xmlto
 
-# Call make instruction with smp support
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 %remove_docs
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
