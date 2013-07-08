@@ -1,0 +1,8 @@
+Change-Id: I2d1c9b944736dbbbc22facdbc2886566369c490d
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:40:33 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4769
+Project: platform/upstream/kbproto
+Branch: refs/heads/tizen
