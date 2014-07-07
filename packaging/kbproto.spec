@@ -11,6 +11,10 @@ Source1001: 	kbproto.manifest
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(xorg-macros)
 
+%if !%{with x}
+ExclusiveArch:
+%endif
+
 %description
 %{summary}.
 
