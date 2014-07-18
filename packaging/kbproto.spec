@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           kbproto
 Version:        1.0.6
 Release:        1
